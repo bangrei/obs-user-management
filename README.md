@@ -1,6 +1,46 @@
-# Getting Started with Create React App
+## Live Demo: 
+https://obs-users-management.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Install dependencies:
+Run command `npm install @mui/material @emotion/react @emotion/styled @reduxjs/toolkit react-redux axios`
+## Install ESLint and Prettier:
+Run command `npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks`
+## Initialize ESLint:
+Run command `npx eslint --init`
+## Create `.prettierrc` in the root directory:
+```json { "singleQuote": true, "trailingComma": "es5", "printWidth": 80 }```
+## TypeScript Models
+File `src/models.ts`
+## API Service to interact with REST API
+File `src/api.ts`
+
+## REDUX State Management
+
+### Redux Setup
+File `src/redux/userSlice.ts`
+### Setting Up the Store
+File `src/redux/store.ts`
+### Define the Root State and App Dispatch. 
+Check out `src/redux/store.ts` file.
+### Update `index.tsx`. 
+Use the store from the new `src/redux/store.ts` file
+### Use Typed Hooks in Components. 
+- By creating typed hooks and using them in your components, we able to eliminate the type error regarding `AsyncThunkAction`. This approach also improves type safety across Redux implementation.
+- Update Components to Use Typed Hooks. Check files  `src/components/UserList.tsx` and `src/components/UserForm.tsx`
+
+## Perform Unit Testing
+
+### Install Testing Dependencies
+```npm install --save-dev @testing-library/react @testing-library/jest-dom```
+### Create Test File
+File: `src/components/UserList.test.tsx`
+### Run testing
+Add a script to your package.json to run the tests:
+```json "scripts": {"test": "react-scripts test  --transformIgnorePatterns \"node_modules/(?!axios)/\""}```
+Make sure in `tsconfig.json` you added this:
+```json "module": "commonjs",```
+To run unit testing, simply run command below: 
+```npm test```
 
 ## Available Scripts
 
@@ -38,9 +78,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
